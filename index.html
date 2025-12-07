@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RPG Pixel Character Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <header>
+        <h1>RPG Pixel Character Generator</h1>
+        <p>Create male/female/base bodies, outfits, colors & export sprite sheets.</p>
+    </header>
+
+    <div id="layout">
+
+        <!-- LEFT PANEL — OPTIONS -->
+        <div class="panel left">
+
+            <h2>Character Options</h2>
+
+            <label>Body Type:</label>
+            <select id="bodyType">
+                <option value="base">Base</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label>Skin Tone:</label>
+            <input type="color" id="skinColor" value="#f1c27d">
+
+            <label>Hair Style:</label>
+            <select id="hairStyle"></select>
+
+            <label>Hair Color:</label>
+            <input type="color" id="hairColor" value="#2f1b0c">
+
+            <label>Outfit:</label>
+            <select id="outfit"></select>
+
+            <label>Palette Preset:</label>
+            <select id="palettePreset">
+                <option value="original">Original</option>
+                <option value="dark">Dark</option>
+                <option value="pastel">Pastel</option>
+                <option value="highcontrast">High Contrast</option>
+            </select>
+
+            <button id="randomize">Randomize</button>
+        </div>
+
+
+        <!-- MIDDLE — PREVIEW -->
+        <div class="panel center">
+            <h2>Live Preview</h2>
+
+            <canvas id="preview" width="160" height="160"></canvas>
+
+            <div id="animButtons">
+                <button data-anim="idle">Idle</button>
+                <button data-anim="walk">Walk</button>
+                <button data-anim="attack">Attack</button>
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT PANEL — EXPORT -->
+        <div class="panel right">
+
+            <h2>Export</h2>
+
+            <label>Frame Size:</label>
+            <select id="frameSize">
+                <option value="16">16 × 16</option>
+                <option value="32">32 × 32</option>
+            </select>
+
+            <button id="exportPNG">Export PNG Sheet</button>
+            <button id="exportZIP">Export ZIP (Sheets + JSON)</button>
+
+            <div id="status"></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
